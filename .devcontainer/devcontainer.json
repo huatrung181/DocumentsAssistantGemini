@@ -1,0 +1,15 @@
+{
+  "image": "mcr.microsoft.com/devcontainers/python:3.11",
+  "postCreateCommand": "pip install -r requirements.txt",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "GitHub.github-vscode-theme",
+        "ms-toolsai.jupyter",
+        "ms-python.python"
+      ]
+    }
+  },
+  "onCreateCommand": "bash .devcontainer/setup.sh"
+}
+// DevContainer Reference: https://code.visualstudio.com/docs/remote/devcontainerjson-reference
