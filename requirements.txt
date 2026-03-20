@@ -1,23 +1,30 @@
-# --- Core Frameworks ---
-streamlit>=1.31.0
-langchain>=0.3.25,<1.0.0
-langchain-community>=0.3.26,<1.0.0
-langchain-text-splitters>=0.3.0
+streamlit
+python-dotenv
 
-# --- Google Gemini & AI ---
-google-generativeai>=0.8.0
-langchain-google-genai>=2.0.0
-python-dotenv>=1.0.0
+# Google Gemini
+google-generativeai
+langchain-google-genai
 
-# --- Vector Store & Embeddings ---
-chromadb>=0.4.0
-langchain-chroma>=0.2.4,<1.0.0
-langchain-huggingface>=0.1.0
-sentence-transformers>=3.0.0
+# LangChain core + modules
+langchain
+langchain-core
+langchain-community
+langchain-text-splitters
+langchain-chroma
 
-# --- PDF Processing ---
-pdfplumber>=0.11.6
-pypdf>=4.0.0
+# Vector DB
+chromadb
 
-# --- UI & Utilities ---
-streamlit-javascript>=0.1.5
+# Embeddings
+sentence-transformers
+langchain-huggingface
+
+# PDF loader
+pdfplumber
+
+# Streamlit JS
+streamlit-javascript
+
+# Optional but recommended
+tqdm
+numpy
