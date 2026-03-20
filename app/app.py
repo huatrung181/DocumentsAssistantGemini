@@ -60,11 +60,8 @@ LANGUAGES = {
         "upload_help": "Drag and drop file here or click the button below. Max 200MB.",
         "quota_exceeded": "⚠️ **Free API Quota Exceeded**",
         "quota_help": "System quota is exhausted. Please enable 'Use Personal API Key' and enter your own key from [Google AI Studio](https://aistudio.google.com/app/apikey).",
-        "general_error": "An error occurred",
-        "quota_exceeded": "⚠️ **API-kiintiö ylittyi**",
-        "quota_help": "Järjestelmän kiintiö on täynnä. Ota käyttöön 'Käytä omaa API-avainta' ja syötä avain osoitteesta [Google AI Studio](https://aistudio.google.com/app/apikey).",
-        "general_error": "Tapahtui virhe",
-
+        "general_error": "An error occurred"
+       
     },
     "Suomi": {
         "title": "🤖 Dokumenttiavustaja - Gemini 2.5 Flash",
@@ -87,6 +84,9 @@ LANGUAGES = {
         "validate_spinner": "Vahvistetaan avainta...",
         "upload_label": "Lataa PDF-tiedosto tästä",
         "upload_help": "Vedä ja pudota tiedosto tähän tai klikkaa alla olevaa painiketta. Enintään 200MB.",
+        "quota_exceeded": "⚠️ **API-kiintiö ylittyi**",
+        "quota_help": "Järjestelmän kiintiö on täynnä. Ota käyttöön 'Käytä omaa API-avainta' ja syötä avain osoitteesta [Google AI Studio](https://aistudio.google.com/app/apikey).",
+        "general_error": "Tapahtui virhe"
     }
 }
 
