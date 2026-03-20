@@ -33,6 +33,9 @@ LANGUAGES = {
         "validate_spinner": "Đang xác thực Key...",
         "upload_label": "Tải file PDF lên tại đây",
         "upload_help": "Kéo thả file vào đây hoặc bấm nút bên dưới. Tối đa 200MB.",
+        "quota_exceeded": "⚠️ **Hết hạn mức sử dụng (API Quota Exceeded)**",
+        "quota_help": "Hạn mức hệ thống đã hết. Vui lòng bật 'Sử dụng API Key cá nhân' và nhập Key của bạn từ [Google AI Studio](https://aistudio.google.com/app/apikey) để tiếp tục.",
+        "general_error": "Đã xảy ra lỗi",
     },
     "English": {
         "title": "🤖 Documents Assistant - Gemini 2.5 Flash",
@@ -55,6 +58,12 @@ LANGUAGES = {
         "validate_spinner": "Validating Key...",
         "upload_label": "Upload your PDF file here",
         "upload_help": "Drag and drop file here or click the button below. Max 200MB.",
+        "quota_exceeded": "⚠️ **Free API Quota Exceeded**",
+        "quota_help": "System quota is exhausted. Please enable 'Use Personal API Key' and enter your own key from [Google AI Studio](https://aistudio.google.com/app/apikey).",
+        "general_error": "An error occurred",
+        "quota_exceeded": "⚠️ **API-kiintiö ylittyi**",
+        "quota_help": "Järjestelmän kiintiö on täynnä. Ota käyttöön 'Käytä omaa API-avainta' ja syötä avain osoitteesta [Google AI Studio](https://aistudio.google.com/app/apikey).",
+        "general_error": "Tapahtui virhe",
 
     },
     "Suomi": {
@@ -236,6 +245,11 @@ if st.session_state.chain:
                     st.session_state.messages.append({"role": "assistant", "content": res})
                     st.rerun()
                 except Exception as e:
-                    st.error(f"Error: {e}")
+                   
+                    err = str(e)
+                    if "429" in err or "RESOURCE_EXHAUSTED" in err:
+                        st.error(t["quota_exceeded"])
+                        st.warning(t["quota_help"])
+                    else: st.error(f"{t['general_error']}: {err}")
 else:
     st.info(t["welcome"])
