@@ -19,7 +19,7 @@
 ## 🛠️ Tech Stack
 
 *   **Frontend:** [Streamlit](https://streamlit.io/)
-*   **LLM Engine:** [Google Gemini 1.5/2.5 Flash](https://ai.google.dev/)
+*   **LLM Engine:** [Google Gemini 2.5 Flash](https://ai.google.dev/)
 *   **Framework:** [LangChain](https://www.langchain.com/)
 *   **Vector Store:** [FAISS](https://github.com/facebookresearch/faiss)
 *   **PDF Processing:** [PyPDF](https://pypdf.readthedocs.io/)
@@ -34,51 +34,21 @@ Make sure you have Python 3.9 or higher installed.
 
 ### 2. Clone the Repository
 ```bash
-git clone [https://github.com/your-username/documents-assistant.git](https://github.com/your-username/documents-assistant.git)
-cd documents-assistant
+git clone [https://github.com/your-username/documents-assistant-gemini.git](https://github.com/your-username/documents-assistant-gemini.git)
+cd documents-assistant-gemini
+```
+### 3. Install Dependencies
 
-### 3\. Install Dependencies
+Install the required Python packages using pip: `pip install -r requirements.txt`
 
-Install the required Python packages using pip:
+### 4. Configuration
 
-Bash
+Create a .env file in the root directory and add your Google Gemini API Key: `GOOGLE_API_KEY=your_api_key_here   `
 
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   pip install -r requirements.txt   `
-
-### 4\. Configuration
-
-Create a .env file in the root directory and add your Google Gemini API Key:
-
-Đoạn mã
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   GOOGLE_API_KEY=your_api_key_here   `
-
-### 5\. Run the Application
+### 5. Run the Application
 
 Start the Streamlit server locally:
-
-Bash
-
-Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQLGroovyHTMLJavaJavaScriptJSONJSXKotlinLaTeXLessLuaMakefileMarkdownMATLABMarkupObjective-CPerlPHPPowerShell.propertiesProtocol BuffersPythonRRubySass (Sass)Sass (Scss)SchemeSQLShellSwiftSVGTSXTypeScriptWebAssemblyYAMLXML`   streamlit run app.py   `
-
-📦 Deployment Guide
--------------------
-
-### Deploying to Streamlit Cloud
-
-1.  **Push your code** to a GitHub repository.
-    
-2.  Go to [share.streamlit.io](https://share.streamlit.io/) and connect your GitHub account.
-    
-3.  Select the repository, branch, and the main file (app.py).
-    
-4.  **Important (Secrets Settings):**
-    
-    *   Before clicking **Deploy**, go to **Advanced Settings** > **Secrets**.
-        
-    *   Ini, TOMLGOOGLE\_API\_KEY = "your\_system\_api\_key\_here"
-        
-5.  Click **Deploy**.
+`streamlit run app.py`
     
 
 🔒 Privacy & Security
@@ -90,13 +60,5 @@ Plain textANTLR4BashCC#CSSCoffeeScriptCMakeDartDjangoDockerEJSErlangGitGoGraphQL
     
 *   **Client-side Usage Tracking:** Free usage counts (10 messages limit) are stored in the user's browser via **LocalStorage**, ensuring privacy and preventing unnecessary server-side tracking.
     
-
-📜 License
-----------
-
-Distributed under the **MIT License**. See LICENSE for more information.
-
-🤝 Contact
-----------
 
 If you have any questions, feedback, or want to contribute, feel free to reach out or open an issue in this repository.
