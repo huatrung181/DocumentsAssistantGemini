@@ -110,7 +110,7 @@ st.set_page_config(page_title="Gemini PDF Assistant", page_icon="🤖", layout="
 if "lang" not in st.session_state: st.session_state.lang = "Tiếng Việt"
 with st.sidebar:
     st.session_state.lang = st.selectbox("🌐 Language / Kieli", options=list(LANGUAGES.keys()))
-    t = LANGUAGES[st.session_state.lang] # Biến tắt để truy cập bản dịch nhanh
+    t = LANGUAGES[st.session_state.lang] 
 
 # count session usage
 if "usage_count" not in st.session_state: st.session_state.usage_count = 0
@@ -183,10 +183,18 @@ with st.sidebar:
         if st.session_state.processed_file != uploaded_file.name:
             with st.status(t["processing"]) as status:
                 try:
+                
+                    st.session_state.messages = []      
+                    st.session_state.chain = None      
+                    st.session_state.retriever = None  
+                
                     vector_store, _ = create_search_engine(uploaded_file.getvalue())
+            
                     st.session_state.chain, st.session_state.retriever = create_qa_chain(vector_store, final_api_key)
                     st.session_state.processed_file = uploaded_file.name
+                    
                     status.update(label=t["done"], state="complete")
+                    st.rerun() 
                 except Exception as e: 
                     st.error(f"Error: {e}")
 
@@ -196,7 +204,7 @@ with st.sidebar:
 
 # --- MAIN INTERFACE ---
 st.title(t["title"])
-st.caption(t["how_it_works"]) #
+st.caption(t["how_it_works"]) 
 st.divider()
 
 if st.session_state.chain:

@@ -1,6 +1,8 @@
 import chromadb
 import tempfile
 import os
+import uuid
+
 from chromadb.config import Settings
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_community.document_loaders import PDFPlumberLoader
@@ -42,20 +44,22 @@ def process_file(file_data, file_type: str = None) -> list:
         raise ValueError("PDF file parsing failed.")
     return docs
 
+
+
 def create_search_engine(file_data, file_type: str = None) -> tuple[VectorStore, list]:
     docs = process_file(file_data, file_type)
     
-    
     encoder = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
-    
+
     client = chromadb.EphemeralClient()
-    client_settings = Settings(allow_reset=True, anonymized_telemetry=False)
+
+    collection_name = f"pdf_chat_{uuid.uuid4().hex}"
     
     search_engine = Chroma.from_documents(
         client=client,
+        collection_name=collection_name,
         documents=docs,
-        embedding=encoder,
-        client_settings=client_settings
+        embedding=encoder
     )
     
     return search_engine, docs
