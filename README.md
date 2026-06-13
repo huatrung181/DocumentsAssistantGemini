@@ -7,7 +7,7 @@
 ## ✨ Key Features
 
 *   **Chat with PDF:** Upload any PDF and ask questions about its content instantly.
-*   **Multilingual Support:** Switch between **English**, **Vietnamese (Tiếng Việt)**, and **Finnish (Suomi)** seamlessly.
+*   **Multilingual Support:** Switch between **English**, **Vietnamese**, and **Finnish (Suomi)** seamlessly.
 *   **Privacy First:** All documents are processed in-memory (RAM) and are automatically deleted when the browser is closed. No files are stored on our servers.
 *   **Hybrid API Mode:** 
     *   **System Key:** Limited to 10 free questions (usage tracked via LocalStorage).
@@ -17,13 +17,13 @@
 ---
 
 ## 🛠️ Tech Stack
-
-*   **Frontend:** [Streamlit](https://streamlit.io/)
-*   **LLM Engine:** [Google Gemini 2.5 Flash](https://ai.google.dev/)
-*   **Framework:** [LangChain](https://www.langchain.com/)
-*   **Vector Store:** [FAISS](https://github.com/facebookresearch/faiss)
-*   **PDF Processing:** [PyPDF](https://pypdf.readthedocs.io/)
-*   **Client-side Sync:** [Streamlit-Javascript](https://github.com/noahshinn/streamlit-javascript)
+- **Frontend:** Streamlit
+- **LLM:** Google Gemini 2.5 Flash
+- **Framework:** LangChain
+- **Document Processing:** PDFPlumber
+- **Embedding Model:** Sentence Transformers (all-MiniLM-L6-v2)
+- **Vector Database:** ChromaDB (In-Memory)
+- **Client-side Persistence:** Streamlit-Javascript (LocalStorage)
 
 ---
 
